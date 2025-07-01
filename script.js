@@ -98,60 +98,60 @@ document.addEventListener('DOMContentLoaded', function() {
           {
             id: 'product1',
             name: 'T-Shirt Urban Groove',
-            price: 'Rp 299.000',
+            price: 'Rp 95.000',
             category: 'streetwear',
             description: 'T-shirt oversized dengan detail grafis edgy dan bahan katun organik yang nyaman. Desain terinspirasi dari seni jalanan lokal, cocok untuk gaya urban yang dinamis.',
-            image: 'Image/T Shirt.webp', /* Ganti ke hitam */
+            image: 'Image/T-Shirt Urban Groove.webp', /* Ganti ke hitam */
             sizes: 'S, M, L, XL',
             material: '100% Katun Organik Bersertifikat'
         },
         {
             id: 'product2',
             name: 'Kemeja Linen Tropis',
-            price: 'Rp 450.000',
+            price: 'Rp 125.000',
             category: 'kasual',
             description: 'Kemeja linen ringan dengan potongan modern dan kerah unik, ideal untuk iklim tropis. Desain minimalis dengan sentuhan warna bumi.',
-            image: 'https://placehold.co/600x600/666666/FFFFFF?text=Linen+Tropis+Shirt', /* Ganti ke abu-abu gelap */
+            image: 'Image/Kemeja Linen Tropis.webp', /* Ganti ke abu-abu gelap */
             sizes: 'S, M, L, XL',
             material: '100% Linen Ramah Lingkungan'
         },
         {
             id: 'product3',
             name: 'Blus Chic Asimetris',
-            price: 'Rp 385.000',
+            price: 'Rp 110.000',
             category: 'chic',
             description: 'Blus elegan dengan potongan asimetris dan detail kerutan halus. Terbuat dari Tencel yang jatuh sempurna, cocok untuk tampilan stylish nan sophisticated.',
-            image: 'https://placehold.co/600x600/B70000/FFFFFF?text=Chic+Asymmetric+Blouse', /* Ganti ke merah gelap */
+            image: 'Image/Blus Chic Asimetris.webp', /* Ganti ke merah gelap */
             sizes: 'S, M, L',
             material: 'Tencel Lyocell Premium'
         },
         {
             id: 'product4',
             name: 'Outerwear Batik Kontemporer',
-            price: 'Rp 690.000',
-            category: 'formal',
+            price: 'Rp 170.000',
+            category: 'chic',
             description: 'Outerwear dengan motif batik modern dan potongan tegas, memadukan tradisi dengan gaya formal kontemporer. Ideal untuk acara khusus.',
-            image: 'https://placehold.co/600x600/000000/FFFFFF?text=Batik+Outerwear', /* Ganti ke hitam */
+            image: 'Image/Outerwear Batik Kontemporer.webp', /* Ganti ke hitam */
             sizes: 'M, L, XL',
             material: 'Katun Batik Cap Eksklusif'
         },
         {
             id: 'product5',
             name: 'Polo Shirt Minimalis',
-            price: 'Rp 320.000',
+            price: 'Rp 105.000',
             category: 'kasual',
             description: 'Polo shirt klasik dengan sentuhan minimalis dan detail jahitan rapi. Bahan pique yang nyaman, cocok untuk tampilan smart-casual sehari-hari.',
-            image: 'https://placehold.co/600x600/666666/FFFFFF?text=Minimalist+Polo', /* Ganti ke abu-abu gelap */
+            image: 'Image/Polo Shirt Minimalis.webp', /* Ganti ke abu-abu gelap */
             sizes: 'S, M, L, XL',
             material: 'Katun Pique Premium'
         },
         {
             id: 'product6',
             name: 'Crop Top Edgy',
-            price: 'Rp 275.000',
+            price: 'Rp 75.000',
             category: 'streetwear',
             description: 'Crop top dengan desain potongan yang berani dan grafis abstrak. Bahan stretch yang mengikuti bentuk tubuh, sempurna untuk gaya streetwear yang ekspresif.',
-            image: 'https://placehold.co/600x600/B70000/FFFFFF?text=Edgy+Crop+Top', /* Ganti ke merah gelap */
+            image: 'Image/Crop Top Edgy.webp', /* Ganti ke merah gelap */
             sizes: 'XS, S, M',
             material: 'Katun Stretch Daur Ulang'
         },
@@ -161,9 +161,19 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 'Rp 250.000',
             category: 'formal',
             description: 'Kemeja batik khas indonesia dengan desain modern dan potongan slim fit. Cocok untuk acara formal maupun semi-formal.',
-            image: 'https://placehold.co/600x600/000000/FFFFFF?text=Batik+Modern+Shirt', /* Ganti ke hitam */
+            image: 'Image/Kemeja Batik Moderen.webp', /* Ganti ke hitam */
             sizes: 'S, M, L, XL',   
             material: '100% Katun Batik Premium'
+        },
+        {   
+            id: 'product8',
+            name: 'Javanes Hand Bag',
+            price: 'Rp 190.000',
+            category: 'formal',
+            description: 'Tas tangan elegan dengan motif batik Javanese yang kaya. Terbuat dari bahan kulit sintetis berkualitas tinggi, cocok untuk acara formal.',
+            image: 'Image/Javanes Hand Bag.webp', /* Ganti ke hitam */
+            sizes: 'One Size',
+            material: 'Kain Tenun Batik Premium'
         }
 
         
