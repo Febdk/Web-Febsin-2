@@ -1,0 +1,175 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF; /* Background Utama Off-White */
+    color: #000000; /* Text Utama Slate Black */
+}
+
+/* Custom CSS Classes for Color Palette */
+.bg-main-background { background-color: #FFFFFF; } /* Background Utama Off-White */
+.text-main-text { color: #000000 ; } /* Text Utama Slate Black */
+.bg-white-contrast { background-color: #FFFFFF; } /* White for card backgrounds */
+
+.bg-primary-febsin { background-color: #000000; } /* Warna Primer Hogo Bas - Hitam */
+.text-primary-febsin { color: #000000; }
+.bg-secondary-element-febsin { background-color: #666666; } /* Warna Sekunder Hogo Bas - Abu-abu Gelap */
+.text-secondary-element-febsin { color: #666666; }
+.bg-accent-febsin { background-color: #B70000; } /* Aksen/CTA Hogo Bas - Merah Gelap */
+.text-accent-febsin { color: #B70000; }
+.border-accent-febsin { border-color: #B70000; }
+.text-link-hover-febsin { color: #B70000; } /* Link Hover/Detail - Merah Gelap */
+
+/* Navigation link styling */
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    color: white; /* Default color for nav links in header */
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #B70000; /* Aksen Hogo Bas - Merah Gelap */
+    transition: width 0.3s ease;
+}
+.nav-link.active::after, .nav-link:hover::after {
+    width: 100%;
+}
+.nav-link.active, .nav-link:hover {
+    color: #B70000; /* Aksen Hogo Bas - Merah Gelap untuk highlight */
+}
+
+/* Fade-in section animation */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Chart container styling for responsiveness */
+.chart-container {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 500px; /* Max width for chart */
+    height: 400px; /* Fixed height for chart on smaller screens */
+    max-height: 50vh; /* Responsive height, up to 50% of viewport height */
+}
+@media (min-width: 768px) {
+    .chart-container {
+        height: 500px; /* Larger height on desktop */
+        max-width: 600px;
+        max-height: 600px;
+    }
+}
+
+/* Product detail modal styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    background-color: #fff; /* Use pure white for modal content */
+    padding: 2.5rem;
+    border-radius: 1rem;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+.modal.open .modal-content {
+    transform: translateY(0);
+}
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #000000; /* Text Utama Slate Black */
+    transition: color 0.2s ease;
+}
+.close-button:hover {
+    color: #B70000; /* Aksen Soft Maroon */
+}
+
+/* Accordion Styling */
+.accordion-item .accordion-header {
+    cursor: pointer;
+}
+.accordion-item .accordion-content {
+    transition: max-height 0.5s ease-in-out;
+}
+.accordion-item .accordion-icon {
+    transition: transform 0.3s ease;
+}
+.accordion-item .accordion-icon.rotate-45 {
+    transform: rotate(45deg);
+}
+.bg-commitment-icon-sustainable {
+    background-color: rgba(183, 0, 0, 0.1); /* Menggunakan warna aksen merah Hogo Boss dengan transparansi */
+}
+
+.bg-commitment-icon-local {
+    background-color: rgba(102, 102, 102, 0.1); /* Menggunakan warna abu-abu gelap Hogo Boss dengan transparansi */
+}
+
+/* Social Media Button Styling */
+.social-btn-footer {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px; /* Padding untuk ukuran tombol */
+    border-radius: 5px; /* Sudut melengkung */
+    font-weight: 600; /* Font weight untuk tombol */
+    text-decoration: none; /* Menghapus garis bawah pada link */
+    background-color: transparent; /* Latar belakang transparan */
+    border: 2px solid #B70000; /* Border dengan warna aksen Hogo Bas - Merah Gelap */
+    color: #FFFFFF; /* Teks putih */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk efek hover */
+}
+
+social-btn-footer:hover {
+    background-color: #B70000; /* Latar belakang merah gelap saat hover */
+    border-color: #B70000; /* Border merah gelap saat hover */
+    color: #FFFFFF; /* Teks tetap putih saat hover */
+    transform: translateY(-2px); /* Efek naik sedikit saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
+}
+
+/* Jika Anda ingin teksnya menyusut di mobile */
+@media (max-width: 640px) { /* Untuk layar di bawah 640px (ukuran sm: di Tailwind) */
+    .social-btn-footer {
+        padding: 8px 15px;
+        font-size: 0.9rem; /* Ukuran font sedikit lebih kecil */
+    }
+    .social-btn-footer span { /* Jika Anda memutuskan pakai teks + ikon */
+        display: none; /* Sembunyikan teks, hanya tampilkan ikon */
+    }
+}

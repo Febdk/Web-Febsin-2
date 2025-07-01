@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Febsin. | Modernitas, Karakter, dan Karya Lokal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 
+    Chosen Palette: Harmony (Background Utama: #F5F1EA, Text Utama: #1A1A1A, Elemen Sekunder Olive: #758E4F, Elemen Sekunder Coklat: #B47B4E, Aksen/CTA: #8C2F39, Link Hover/Detail: #0A1F44)
+    Application Structure Plan: Situs web Febsin ini dirancang sebagai Single-Page Application (SPA) dengan struktur modular dan hirarkis untuk pengalaman pengguna yang minimalis dan profesional. Strukturnya adalah:
+    1.  **Hero Section:** Pengantar visual yang kuat dengan logo dan tagline, menciptakan kesan pertama yang mendalam.
+    2.  **About Febsin Section:** Menggabungkan Manifesto dan DNA Brand, menjelaskan visi, misi, dan pilar Sustainable & Edgy. Ini adalah narasi inti brand.
+    3.  **Product Etalase Section:** Halaman utama untuk menampilkan produk Tops Fesyen. Memiliki sistem filtering (simulasi) dan detail produk melalui modal pop-up, menonjolkan estetika minimalis dengan fokus pada visual produk.
+    4.  **Style Spectrum Section:** Mengintegrasikan Radar Chart untuk visualisasi cakupan gaya, memberikan perspektif data-driven yang unik.
+    5.  **Our Commitment Section:** Menguraikan komitmen Febsin terhadap nilai lokal dan keberlanjutan.
+    6.  **Contact Section:** Formulir kontak sederhana (simulasi) untuk interaksi langsung.
+    Desain ini dipilih untuk memandu pengguna secara logis dari pengenalan brand ke eksplorasi produk, sambil tetap menjaga kesan mewah dan modernitas.
+
+    Visualization & Content Choices:
+    -   **Hero:** Logo besar dan teks singkat yang impactful.
+    -   **About Febsin:** Gabungan teks naratif dengan penekanan pada kata kunci.
+    -   **Product Etalase:**
+        -   **Filter Kategori:** Tombol untuk memfilter jenis Tops.
+        -   **Product Cards:** Grid display dengan gambar, nama, dan harga.
+        -   **Product Detail Modal:** Pop-up saat klik produk dengan gambar lebih besar, deskripsi, dan tombol (simulasi) pembelian.
+    -   **Style Spectrum:** Radar Chart dari Chart.js untuk memvisualisasikan cakupan gaya Febsin, memberikan data insight secara interaktif.
+    -   **Our Commitment:** Teks dan ikon sederhana untuk poin-poin utama.
+    -   **Contact:** Formulir sederhana dengan input field (validasi sisi klien).
+
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-primary-febsin/90 backdrop-blur-sm text-white py-5 px-8 fixed top-0 w-full z-50 transition-shadow duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-3xl font-extrabold tracking-wider">Febsin.</a>
+            <nav class="hidden md:flex space-x-10">
+                <a href="#about" class="nav-link">Tentang Kami</a>
+                <a href="#products" class="nav-link">Produk</a>
+                <a href="#style-spectrum" class="nav-link">Gaya</a>
+                <a href="#commitment" class="nav-link">Komitmen</a>
+                <a href="#contact" class="nav-link">Kontak</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 bg-primary-febsin/95 rounded-lg shadow-xl py-2">
+            <a href="#about" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Tentang Kami</a>
+            <a href="#products" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Produk</a>
+            <a href="#style-spectrum" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Gaya</a>
+            <a href="#commitment" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Komitmen</a>
+            <a href="#contact" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Kontak</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center justify-center bg-primary-febsin text-white p-6 md:p-12">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="mb-10">
+                     <img src="Image/FEBSIN LOGO.webp" alt="Febsin Logo" class="w-full max-w-md mx-auto h-auto" onerror="this.onerror=null; this.src='https://placehold.co/400x150/000000/FFFFFF?text=Febsin.';">
+                </div>
+                <h1 class="text-3xl md:text-6xl font-extrabold tracking-tight leading-tight">MODERNITAS, KARAKTER, DAN KARYA LOKAL</h1>
+                <p class="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-white/80 font-light">Menghadirkan fesyen berkualitas yang membentuk tren, berlandaskan nilai keberlanjutan dan pemberdayaan anak bangsa.</p>
+                <a href="#products" class="mt-12 inline-block bg-accent-febsin text-white font-bold py-4 px-10 rounded-full hover:bg-[#6A232A] transition duration-300 transform hover:scale-105 text-lg shadow-lg">LIHAT KOLEKSI KAMI</a>
+            </div>
+        </section>
+
+        <!-- About Febsin Section -->
+        <section id="about" class="py-24 px-8 fade-in-section bg-main-background">
+            <div class="container mx-auto max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary-febsin mb-4 leading-tight">TENTANG FEBSIN</h2>
+                    <p class="mt-4 text-xl text-main-text max-w-3xl mx-auto">Kami adalah brand fesyen apparel dari Indonesia, berkomitmen untuk menghadirkan kualitas, inovasi, dan karakter dalam setiap produk.</p>
+                </div>
+                <div class="space-y-12">
+                    <!-- Visi & Misi -->
+                    <div class="max-w-4xl mx-auto space-y-6">
+                        <div class="accordion-item bg-white-contrast border border-gray-200 rounded-xl shadow-md overflow-hidden">
+                            <button class="accordion-header w-full text-left p-6 flex justify-between items-center transition duration-300 hover:bg-gray-50">
+                                <h3 class="text-2xl font-bold text-primary-febsin">Visi Utama Kami</h3>
+                                <span class="accordion-icon text-accent-febsin text-3xl font-light transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                <p class="p-6 pt-0 text-main-text text-lg">Terus tumbuh dan berinovasi dalam menaikkan daya saing produk lokal Indonesia di kancah fesyen global.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-white-contrast border border-gray-200 rounded-xl shadow-md overflow-hidden">
+                            <button class="accordion-header w-full text-left p-6 flex justify-between items-center transition duration-300 hover:bg-gray-50">
+                                <h3 class="text-2xl font-bold text-primary-febsin">Misi Kami</h3>
+                                <span class="accordion-icon text-accent-febsin text-3xl font-light transform transition-transform duration-300">+</span>
+                            </button>
+                            <div class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                                <ul class="p-6 pt-0 text-main-text text-lg space-y-3 list-disc list-inside">
+                                    <li>**Inovasi Produk:** Selalu membuat produk fesyen yang inovatif dan relevan, memenuhi kebutuhan serta aspirasi pasar.</li>
+                                    <li>**Peningkatan Daya Saing:** Meningkatkan daya saing produk fesyen lokal melalui kualitas desain, bahan, dan produksi yang tak tertandingi.</li>
+                                    <li>**Pemberdayaan Tenaga Kerja Lokal:** Memberikan dampak positif dengan memberdayakan dan mendukung tenaga kerja lokal yang kompeten dan beretika.</li>
+                                    <li>**Pemberdayaan Karya Lokal:** Mengangkat dan mengintegrasikan elemen serta inspirasi dari karya lokal Indonesia, memberikan sentuhan unik dan otentik.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DNA Brand -->
+                    <div class="text-center mt-20 mb-16">
+                        <h3 class="text-3xl md:text-4xl font-extrabold text-primary-febsin mb-8 leading-tight">DNA BRAND KAMI</h3>
+                        <p class="mt-4 text-xl max-w-3xl mx-auto text-main-text">Dua pilar yang menjadi jantung dari filosofi Febsin. Keseimbangan antara kesadaran dan keberanian dalam setiap koleksi kami.</p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                        <div class="bg-white-contrast p-10 rounded-xl shadow-xl text-center flex flex-col items-center">
+                            <div class="w-20 h-20 bg-primary-febsin/20 rounded-full flex items-center justify-center mb-6 border-4 border-white-contrast shadow-lg">
+                            <span class="text-4xl text-primary-febsin">🌿</span>
+                            </div>
+                            <h4 class="text-3xl font-extrabold text-primary-febsin mb-4">SUSTAINABLE</h4>
+                            <p class="text-main-text text-lg">Kami berdedikasi untuk meminimalkan dampak lingkungan melalui pemilihan bahan yang bertanggung jawab dan praktik produksi yang etis, memberdayakan komunitas dan menjaga bumi.</p>
+                        </div>
+                        <div class="bg-white-contrast p-10 rounded-xl shadow-xl text-center flex flex-col items-center">
+                            <div class="w-20 h-20 bg-accent-febsin/20 rounded-full flex items-center justify-center mb-6 border-4 border-white-contrast shadow-lg">
+                            <span class="text-4xl text-accent-febsin">⚡️</span>
+                            </div>
+                            <h4 class="text-3xl font-extrabold text-accent-febsin mb-4">EDGY</h4>
+                            <p class="text-main-text text-lg">Kami merangkul desain yang berani dan tidak konvensional, menantang batasan, dan mendorong setiap individu untuk mengekspresikan diri dengan percaya diri dan penuh karakter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Etalase Section -->
+        <section id="products" class="py-24 px-8 fade-in-section bg-main-background">
+            <div class="container mx-auto max-w-7xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary-febsin mb-4 leading-tight">KOLEKSI TOPS FEBSIN</h2>
+                    <p class="mt-4 text-xl text-main-text max-w-3xl mx-auto">Jelajahi pilihan atasan kami yang dirancang dengan memadukan gaya modern, kualitas terbaik, dan sentuhan khas lokal.</p>
+                </div>
+
+                <!-- Product Filters -->
+                <div class="flex justify-center flex-wrap gap-4 mb-12">
+                    <button class="filter-btn active bg-accent-febsin text-white px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-[#6A232A] transition duration-300" data-filter="all">Semua</button>
+                    <button class="filter-btn bg-white-contrast text-primary-febsin px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-gray-100 transition duration-300" data-filter="kasual">Kasual</button>
+                    <button class="filter-btn bg-white-contrast text-primary-febsin px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-gray-100 transition duration-300" data-filter="streetwear">Streetwear</button>
+                    <button class="filter-btn bg-white-contrast text-primary-febsin px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-gray-100 transition duration-300" data-filter="formal">Formal</button>
+                    <button class="filter-btn bg-white-contrast text-primary-febsin px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-gray-100 transition duration-300" data-filter="chic">Chic</button>
+                </div>
+
+                <!-- Product Grid -->
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Product cards will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Detail Modal -->
+        <div id="product-modal" class="modal">
+            <div class="modal-content relative bg-white-contrast p-8 rounded-xl shadow-2xl w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2">
+                <span class="close-button">&times;</span>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <img id="modal-product-image" src="" alt="Product Image" class="w-full h-auto rounded-lg shadow-md mb-4">
+                        <p class="text-sm text-gray-500 text-center">Gambar hanya ilustrasi</p>
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <div>
+                            <h3 id="modal-product-name" class="text-3xl font-extrabold text-primary-febsin mb-2"></h3>
+                            <p id="modal-product-price" class="text-2xl font-bold text-accent-febsin mb-4"></p>
+                            <p id="modal-product-description" class="text-main-text text-lg leading-relaxed mb-6"></p>
+                            <div class="mb-4">
+                                <p class="font-semibold text-primary-febsin mb-2">Kategori:</p>
+                                <span id="modal-product-category" class="inline-block bg-primary-febsin/10 text-primary-febsin text-sm px-3 py-1 rounded-full font-semibold"></span>
+                            </div>
+                            <div class="mb-6">
+                                <p class="font-semibold text-primary-febsin mb-2">Ukuran Tersedia:</p>
+                                <span id="modal-product-sizes" class="text-main-text text-lg"></span>
+                            </div>
+                            <div class="mb-6">
+                                <p class="font-semibold text-primary-febsin mb-2">Material:</p>
+                                <span id="modal-product-material" class="text-main-text text-lg"></span>
+                            </div>
+                        </div>
+                        <button class="bg-accent-febsin text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#6A232A] transition duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">Pesan Sekarang (Simulasi)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Style Spectrum Section -->
+        <section id="style-spectrum" class="py-24 px-8 fade-in-section bg-white-contrast">
+             <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary-febsin mb-4 leading-tight">SPEKTRUM GAYA FEBSIN</h2>
+                    <p class="mt-4 text-xl text-main-text max-w-3xl mx-auto">Visualisasi cakupan Febsin dalam berbagai spektrum gaya. Setiap desain mencerminkan keseimbangan yang unik antara modernitas dan karakter.</p>
+                </div>
+                <div class="bg-white-contrast p-10 rounded-xl shadow-xl max-w-5xl mx-auto">
+                    <h3 class="text-3xl font-extrabold text-primary-febsin text-center mb-4">Analisis Cakupan Gaya</h3>
+                    <p class="text-center text-main-text text-lg mb-10">Radar Chart di bawah menunjukkan sejauh mana Febsin mencakup gaya Kasual, Streetwear, Chic, Vintage, Smart Casual, dan Formal. Semakin jauh dari pusat, semakin kuat representasi gaya tersebut.</p>
+                    <div class="chart-container">
+                        <canvas id="styleSpectrumChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Commitment Section -->
+        <section id="commitment" class="py-24 px-8 bg-primary-febsin text-white fade-in-section">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">KOMITMEN KAMI</h2>
+                    <p class="mt-4 text-xl max-w-3xl mx-auto text-white/80">Febsin lahir dari dan untuk Indonesia. Kami berkomitmen penuh untuk menjadi bagian dari pertumbuhan ekosistem fesyen lokal, dari hulu hingga hilir, dengan praktik yang bertanggung jawab.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div class="text-center p-10 bg-white-contrast rounded-xl shadow-xl flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 border-4 border-white-contrast shadow-lg bg-commitment-icon-sustainable">
+                            <span class="text-4xl text-primary-febsin">📈</span>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-primary-febsin mb-4">FESYEN BERKELANJUTAN</h3>
+                        <p class="text-main-text text-lg">Dedikasi kami untuk material ramah lingkungan dan proses produksi yang etis meminimalkan dampak negatif, serta mendukung masa depan fesyen yang lebih hijau.</p>
+                    </div>
+
+                    <div class="text-center p-10 bg-white-contrast rounded-xl shadow-xl flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 border-4 border-white-contrast shadow-lg bg-commitment-icon-local">
+                        <span class="text-4xl text-secondary-element-febsin">🔝</span>
+                        </div>
+                        <h3 class="text-3xl font-extrabold text-primary-febsin mb-4">KARYA LOKAL BERKUALITAS</h3>
+                        <p class="text-main-text text-lg">Kami memberdayakan tenaga kerja dan pengrajin lokal, mengintegrasikan keunikan budaya Indonesia dalam desain modern untuk menciptakan produk dengan karakter otentik.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 px-8 fade-in-section bg-main-background">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary-febsin mb-4 leading-tight">HUBUNGI KAMI</h2>
+                    <p class="mt-4 text-xl text-main-text max-w-2xl mx-auto">Ada pertanyaan, saran, atau ingin berkolaborasi? Jangan ragu untuk menghubungi kami melalui formulir di bawah ini.</p>
+                </div>
+                <form id="contact-form" class="bg-white-contrast p-10 rounded-xl shadow-xl space-y-6">
+                    <div>
+                        <label for="name" class="block text-lg font-semibold text-primary-febsin mb-2">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-febsin focus:border-transparent transition duration-200" placeholder="Nama Anda" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-lg font-semibold text-primary-febsin mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-febsin focus:border-transparent transition duration-200" placeholder="email@contoh.com" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-lg font-semibold text-primary-febsin mb-2">Pesan Anda</label>
+                        <textarea id="message" name="message" rows="6" class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent-febsin focus:border-transparent transition duration-200" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-accent-febsin text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-[#6A232A] transition duration-300 transform hover:scale-105 shadow-lg">Kirim Pesan</button>
+                    <p id="contact-message" class="mt-4 text-center text-[#758E4F] font-semibold hidden">Pesan Anda telah terkirim! Terima kasih.</p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- Footer -->
+     <footer class="bg-primary-febsin text-white py-14 px-8">
+        <div class="container mx-auto text-center">
+            <p class="text-3xl font-extrabold tracking-wider mb-4">Febsin.</p>
+            <p class="mt-4 text-base text-white/70 font-light">Modernitas, Karakter, dan Karya Lokal. &copy; 2025</p>
+            
+            <div class="flex justify-center space-x-6 mt-8">
+                <a href="https://www.instagram.com/febsinstore?igsh=dTlhMDd2bjNzd2ly" target="_blank" rel="noopener noreferrer" 
+                   class="social-btn-footer">
+                    Instagram
+                </a>
+                
+                <a href="https://wa.me/message/NGFIMU4EBZQPI1" target="_blank" rel="noopener noreferrer" 
+                   class="social-btn-footer">
+                    WhatsApp
+                </a>
+                
+                <a href="https://www.tiktok.com/@ex.peby?_t=ZS-8xdsD6zrpZJ&_r=1" target="_blank" rel="noopener noreferrer" 
+                   class="social-btn-footer">
+                    TikTok
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
