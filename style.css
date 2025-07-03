@@ -23,7 +23,7 @@ body {
     position: relative;
     font-weight: 500;
     transition: color 0.3s ease;
-    color: white; /* Default color for nav links in header */
+    color: #B70000; /* PERBAIKAN: Default color for nav links in header (Putih agar kontras dengan header hitam) */
 }
 .nav-link::after {
     content: '';
@@ -155,7 +155,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk efek hover */
 }
 
-social-btn-footer:hover {
+.social-btn-footer:hover { /* PERBAIKAN: Titik sudah ditambahkan */
     background-color: #B70000; /* Latar belakang merah gelap saat hover */
     border-color: #B70000; /* Border merah gelap saat hover */
     color: #FFFFFF; /* Teks tetap putih saat hover */
@@ -172,4 +172,69 @@ social-btn-footer:hover {
     .social-btn-footer span { /* Jika Anda memutuskan pakai teks + ikon */
         display: none; /* Sembunyikan teks, hanya tampilkan ikon */
     }
+}
+
+/* Styling untuk Halaman Keranjang */
+#cart-items-container .cart-item-row {
+    display: flex;
+    flex-direction: column; /* Default ke kolom untuk mobile */
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+#cart-items-container .cart-item-row:last-child {
+    border-bottom: none;
+}
+#cart-items-container img {
+    margin-bottom: 1rem; /* Spasi bawah untuk gambar di mobile */
+}
+#cart-items-container .cart-qty-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    width: 60px;
+    text-align: center;
+}
+
+/* Media query untuk tampilan desktop di halaman keranjang */
+@media (min-width: 640px) { /* sm: breakpoint */
+    #cart-items-container .cart-item-row {
+        flex-direction: row; /* Kembali ke baris untuk desktop */
+        text-align: left;
+        justify-content: space-between;
+    }
+    #cart-items-container img {
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+}
+
+/* Styling untuk Halaman Checkout */
+#checkout-form label {
+    margin-bottom: 0.5rem;
+}
+#checkout-form input[type="text"],
+#checkout-form input[type="email"],
+#checkout-form input[type="tel"],
+#checkout-form textarea,
+#checkout-form input[type="number"] { /* Tambahkan input type number jika ada */
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+#checkout-form input:focus,
+#checkout-form textarea:focus {
+    border-color: #B70000; /* Aksen Hogo Bas - Merah Gelap */
+    outline: none;
+}
+
+/* Gaya untuk tombol yang dinonaktifkan */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }

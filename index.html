@@ -14,47 +14,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Custom CSS File -->
     <link rel="stylesheet" href="style.css">
-    <!-- 
-    Chosen Palette: Harmony (Background Utama: #F5F1EA, Text Utama: #1A1A1A, Elemen Sekunder Olive: #758E4F, Elemen Sekunder Coklat: #B47B4E, Aksen/CTA: #8C2F39, Link Hover/Detail: #0A1F44)
-    Application Structure Plan: Situs web Febsin ini dirancang sebagai Single-Page Application (SPA) dengan struktur modular dan hirarkis untuk pengalaman pengguna yang minimalis dan profesional. Strukturnya adalah:
-    1.  **Hero Section:** Pengantar visual yang kuat dengan logo dan tagline, menciptakan kesan pertama yang mendalam.
-    2.  **About Febsin Section:** Menggabungkan Manifesto dan DNA Brand, menjelaskan visi, misi, dan pilar Sustainable & Edgy. Ini adalah narasi inti brand.
-    3.  **Product Etalase Section:** Halaman utama untuk menampilkan produk Tops Fesyen. Memiliki sistem filtering (simulasi) dan detail produk melalui modal pop-up, menonjolkan estetika minimalis dengan fokus pada visual produk.
-    4.  **Style Spectrum Section:** Mengintegrasikan Radar Chart untuk visualisasi cakupan gaya, memberikan perspektif data-driven yang unik.
-    5.  **Our Commitment Section:** Menguraikan komitmen Febsin terhadap nilai lokal dan keberlanjutan.
-    6.  **Contact Section:** Formulir kontak sederhana (simulasi) untuk interaksi langsung.
-    Desain ini dipilih untuk memandu pengguna secara logis dari pengenalan brand ke eksplorasi produk, sambil tetap menjaga kesan mewah dan modernitas.
-
-    Visualization & Content Choices:
-    -   **Hero:** Logo besar dan teks singkat yang impactful.
-    -   **About Febsin:** Gabungan teks naratif dengan penekanan pada kata kunci.
-    -   **Product Etalase:**
-        -   **Filter Kategori:** Tombol untuk memfilter jenis Tops.
-        -   **Product Cards:** Grid display dengan gambar, nama, dan harga.
-        -   **Product Detail Modal:** Pop-up saat klik produk dengan gambar lebih besar, deskripsi, dan tombol (simulasi) pembelian.
-    -   **Style Spectrum:** Radar Chart dari Chart.js untuk memvisualisasikan cakupan gaya Febsin, memberikan data insight secara interaktif.
-    -   **Our Commitment:** Teks dan ikon sederhana untuk poin-poin utama.
-    -   **Contact:** Formulir sederhana dengan input field (validasi sisi klien).
-
-    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
-    -->
 </head>
+
 <body class="antialiased">
 
     <!-- Header & Navigation -->
     <header id="header" class="bg-primary-febsin/90 backdrop-blur-sm text-white py-5 px-8 fixed top-0 w-full z-50 transition-shadow duration-300">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#hero" class="text-3xl font-extrabold tracking-wider">Febsin.</a>
+            <a href="#hero" class="text-3xl font-extrabold tracking-wider">
+                <img src="Image/FEBSIN LOGO.webp" alt="Febsin Logo" class="h-20">
+            </a>
             <nav class="hidden md:flex space-x-10">
                 <a href="#about" class="nav-link">Tentang Kami</a>
                 <a href="#products" class="nav-link">Produk</a>
                 <a href="#style-spectrum" class="nav-link">Gaya</a>
                 <a href="#commitment" class="nav-link">Komitmen</a>
                 <a href="#contact" class="nav-link">Kontak</a>
+                <!-- Tautan Keranjang di Header Desktop -->
+                <a href="cart.html" class="nav-link cart-icon-link">
+                    Keranjang (<span id="cart-count">0</span>)
+                </a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
+            <div class="flex items-center md:hidden">
+                <!-- Tautan Keranjang di Header Mobile -->
+                <a href="cart.html" class="nav-link cart-icon-link mr-4">
+                    Keranjang (<span id="cart-count-mobile">0</span>)
+                </a>
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden mt-6 bg-primary-febsin/95 rounded-lg shadow-xl py-2">
@@ -63,6 +52,7 @@
             <a href="#style-spectrum" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Gaya</a>
             <a href="#commitment" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Komitmen</a>
             <a href="#contact" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Kontak</a>
+            <a href="cart.html" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Keranjang (<span id="cart-count-mobile-nav">0</span>)</a>
         </div>
     </header>
 
@@ -121,17 +111,17 @@
                     </div>
                     <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                         <div class="bg-white-contrast p-10 rounded-xl shadow-xl text-center flex flex-col items-center">
-                            <div class="w-20 h-20 bg-primary-febsin/20 rounded-full flex items-center justify-center mb-6 border-4 border-white-contrast shadow-lg">
-                            <span class="text-4xl text-primary-febsin">🌿</span>
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 border-4 border-white-contrast shadow-lg bg-commitment-icon-sustainable">
+                            <span class="text-4xl text-primary-febsin">📈</span>
                             </div>
                             <h4 class="text-3xl font-extrabold text-primary-febsin mb-4">SUSTAINABLE</h4>
-                            <p class="text-main-text text-lg">Kami berdedikasi untuk meminimalkan dampak lingkungan melalui pemilihan bahan yang bertanggung jawab dan praktik produksi yang etis, memberdayakan komunitas dan menjaga bumi.</p>
+                            <p class="text-main-text text-lg">Dedikasi kami untuk meminimalkan dampak lingkungan melalui pemilihan bahan yang bertanggung jawab dan praktik produksi yang etis, memberdayakan komunitas dan menjaga bumi.</p>
                         </div>
                         <div class="bg-white-contrast p-10 rounded-xl shadow-xl text-center flex flex-col items-center">
-                            <div class="w-20 h-20 bg-accent-febsin/20 rounded-full flex items-center justify-center mb-6 border-4 border-white-contrast shadow-lg">
-                            <span class="text-4xl text-accent-febsin">⚡️</span>
+                            <div class="w-20 h-20 rounded-full flex items-center justify-center mb-6 border-4 border-white-contrast shadow-lg bg-commitment-icon-local">
+                            <span class="text-4xl text-secondary-element-febsin">🔝</span>
                             </div>
-                            <h4 class="text-3xl font-extrabold text-accent-febsin mb-4">EDGY</h4>
+                            <h4 class="text-3xl font-extrabold text-primary-febsin mb-4">EDGY</h4>
                             <p class="text-main-text text-lg">Kami merangkul desain yang berani dan tidak konvensional, menantang batasan, dan mendorong setiap individu untuk mengekspresikan diri dengan percaya diri dan penuh karakter.</p>
                         </div>
                     </div>
@@ -163,7 +153,7 @@
             </div>
         </section>
 
-        <!-- Product Detail Modal -->
+        <!-- Product Detail Modal (Digunakan untuk menampilkan detail produk) -->
         <div id="product-modal" class="modal">
             <div class="modal-content relative bg-white-contrast p-8 rounded-xl shadow-2xl w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2">
                 <span class="close-button">&times;</span>
@@ -189,14 +179,18 @@
                                 <p class="font-semibold text-primary-febsin mb-2">Material:</p>
                                 <span id="modal-product-material" class="text-main-text text-lg"></span>
                             </div>
+                            <!-- Input Kuantitas -->
+                            <div class="mb-6">
+                                <label for="modal-product-quantity" class="block font-semibold text-primary-febsin mb-2">Kuantitas:</label>
+                                <input type="number" id="modal-product-quantity" value="1" min="1" class="w-24 px-3 py-2 border border-gray-300 rounded-lg text-center focus:ring-2 focus:ring-accent-febsin focus:border-transparent transition duration-200">
+                            </div>
                         </div>
-                        <button class="bg-accent-febsin text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#6A232A] transition duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">Pesan Sekarang (Simulasi)</button>
+                        <!-- Tombol Tambahkan ke Keranjang -->
+                        <button class="add-to-cart-btn bg-accent-febsin text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#6A232A] transition duration-300 transform hover:scale-105 shadow-lg w-full md:w-auto">Tambahkan ke Keranjang</button>
                     </div>
                 </div>
             </div>
         </div>
-
-
         <!-- Style Spectrum Section -->
         <section id="style-spectrum" class="py-24 px-8 fade-in-section bg-white-contrast">
              <div class="container mx-auto max-w-6xl">
@@ -295,6 +289,6 @@
     </footer>
 
     <!-- Custom JavaScript File -->
-    <script src="script.js"></script>
+    <script type="module" src="js/main.js"></script
 </body>
 </html>

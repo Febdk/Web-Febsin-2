@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Febsin. | Konfirmasi Pesanan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Header (Sama seperti index.html agar konsisten) -->
+    <header id="header" class="bg-primary-febsin/90 backdrop-blur-sm text-white py-5 px-8 fixed top-0 w-full z-50 transition-shadow duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html#hero" class="text-3xl font-extrabold tracking-wider">
+                <img src="Image/FEBSIN LOGO.webp" alt="Febsin Logo" class="h-8">
+            </a>
+            <nav class="hidden md:flex space-x-10">
+                <a href="index.html#about" class="nav-link">Tentang Kami</a>
+                <a href="index.html#products" class="nav-link">Produk</a>
+                <a href="index.html#style-spectrum" class="nav-link">Gaya</a>
+                <a href="index.html#commitment" class="nav-link">Komitmen</a>
+                <a href="index.html#contact" class="nav-link">Kontak</a>
+                <a href="cart.html" class="nav-link cart-icon-link">
+                    Keranjang (<span id="cart-count">0</span>)
+                </a>
+            </nav>
+            <div class="flex items-center md:hidden">
+                <a href="cart.html" class="nav-link cart-icon-link mr-4">
+                    Keranjang (<span id="cart-count-mobile">0</span>)
+                </a>
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 bg-primary-febsin/95 rounded-lg shadow-xl py-2">
+            <a href="index.html#about" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Tentang Kami</a>
+            <a href="index.html#products" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Produk</a>
+            <a href="index.html#style-spectrum" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Gaya</a>
+            <a href="index.html#commitment" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Komitmen</a>
+            <a href="index.html#contact" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Kontak</a>
+            <a href="cart.html" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Keranjang (<span id="cart-count-mobile-nav">0</span>)</a>
+        </div>
+    </header>
+
+    <main class="min-h-screen flex items-center justify-center pt-24"> <!-- Tambahkan padding-top agar tidak tertutup header -->
+        <!-- Order Confirmation Page -->
+        <section id="order-confirmation-page" class="py-12 px-8 bg-main-background text-center">
+            <div class="container mx-auto max-w-2xl bg-white-contrast p-10 rounded-xl shadow-xl">
+                <h2 class="text-5xl font-extrabold text-primary-febsin mb-6">🎉 Pesanan Berhasil! 🎉</h2>
+                <p class="text-xl text-main-text mb-8">Terima kasih atas pesanan Anda di Febsin. Pesanan Anda telah berhasil diterima dan akan segera diproses.</p>
+                <div class="text-left bg-gray-50 p-6 rounded-lg mb-8">
+                    <h3 class="text-2xl font-bold text-primary-febsin mb-4">Detail Pesanan Anda:</h3>
+                    <p class="text-main-text text-lg mb-2"><strong>Nomor Pesanan:</strong> <span id="confirmation-order-id">#FEB-XXXX</span></p>
+                    <p class="text-main-text text-lg mb-2"><strong>Total Pembayaran:</strong> <span id="confirmation-total-price">Rp 0</span></p>
+                    <p class="text-main-text text-lg">Kami akan mengirimkan detail konfirmasi ke email Anda.</p>
+                </div>
+                <button id="back-to-home-btn" class="bg-accent-febsin text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#6A232A] transition duration-300 transform hover:scale-105 shadow-lg">Kembali ke Beranda</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Sama seperti index.html agar konsisten) -->
+    <footer class="bg-primary-febsin text-white py-14 px-8">
+        <div class="container mx-auto text-center">
+            <p class="text-3xl font-extrabold tracking-wider mb-4">Febsin.</p>
+            <p class="mt-4 text-base text-white/70 font-light">Modernitas, Karakter, dan Karya Lokal. &copy; 2025</p>
+            
+            <div class="flex justify-center space-x-6 mt-8">
+                <a href="https://www.instagram.com/febsinstore?igsh=dTlhMDd2bjNzd2ly" target="_blank" rel="noopener noreferrer" 
+                   class="social-btn-footer">
+                    Instagram
+                </a>
+                
+                <a href="https://wa.me/message/NGFIMU4EBZQPI1" target="_blank" rel="noopener noreferrer" 
+                   class="social-btn-footer">
+                    WhatsApp
+                </a>
+                
+                <a href="https://www.tiktok.com/@ex.peby?_t=ZS-8xdsD6zrpZJ&_r=1" target="_blank" rel="noopener noreferrer" 
+                   class="social-btn-footer">
+                    TikTok
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript khusus halaman konfirmasi pesanan -->
+    <script type="module" src="js/orderConfirmation.js"></script>
+</body>
+</html>

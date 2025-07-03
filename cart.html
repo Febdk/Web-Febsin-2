@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Febsin. | Keranjang Belanja</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Header (Sama seperti index.html agar konsisten) -->
+    <header id="header" class="bg-primary-febsin/90 backdrop-blur-sm text-white py-5 px-8 fixed top-0 w-full z-50 transition-shadow duration-300">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html#hero" class="text-3xl font-extrabold tracking-wider">
+                <img src="Image/FEBSIN LOGO.webp" alt="Febsin Logo" class="h-8">
+            </a>
+            <nav class="hidden md:flex space-x-10">
+                <a href="index.html#about" class="nav-link">Tentang Kami</a>
+                <a href="index.html#products" class="nav-link">Produk</a>
+                <a href="index.html#style-spectrum" class="nav-link">Gaya</a>
+                <a href="index.html#commitment" class="nav-link">Komitmen</a>
+                <a href="index.html#contact" class="nav-link">Kontak</a>
+                <a href="cart.html" class="nav-link active cart-icon-link">
+                    Keranjang (<span id="cart-count">0</span>)
+                </a>
+            </nav>
+            <div class="flex items-center md:hidden">
+                <a href="cart.html" class="nav-link active cart-icon-link mr-4">
+                    Keranjang (<span id="cart-count-mobile">0</span>)
+                </a>
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 bg-primary-febsin/95 rounded-lg shadow-xl py-2">
+            <a href="index.html#about" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Tentang Kami</a>
+            <a href="index.html#products" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Produk</a>
+            <a href="index.html#style-spectrum" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Gaya</a>
+            <a href="index.html#commitment" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Komitmen</a>
+            <a href="index.html#contact" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Kontak</a>
+            <a href="cart.html" class="block py-3 px-6 text-base font-medium hover:bg-white/10 rounded">Keranjang (<span id="cart-count-mobile-nav">0</span>)</a>
+        </div>
+    </header>
+
+    <main class="pt-24"> <!-- Tambahkan padding-top agar tidak tertutup header -->
+        <!-- Cart Page Section -->
+        <section id="cart-page" class="py-12 px-8 bg-main-background">
+            <div class="container mx-auto max-w-4xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-primary-febsin mb-4 leading-tight">KERANJANG BELANJA ANDA</h2>
+                    <p class="mt-4 text-xl text-main-text max-w-2xl mx-auto">Periksa kembali pesanan Anda sebelum melanjutkan ke pembayaran.</p>
+                </div>
+                <div class="bg-white-contrast p-8 rounded-xl shadow-xl">
+                    <div id="cart-items-container" class="space-y-6 mb-8">
+                        <!-- Cart items will be rendered here by JavaScript -->
+                    </div>
+                    <div class="border-t border-gray-200 pt-6 flex justify-between items-center">
+                        <p class="text-2xl font-bold text-primary-febsin">Total:</p>
+                        <p id="cart-total-price" class="text-2xl font-bold text-accent-febsin">Rp 0</p>
+                    </div>
+                    <div class="mt-8 flex flex-col md:flex-row justify-end gap-4">
+                        <a href="index.html#products" id="continue-shopping-btn" class="bg-gray-200 text-primary-febsin font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-300 transition duration-300 shadow-md text-center">Lanjutkan Belanja</a>
+                        <button id="checkout-btn" class="bg-accent-febsin text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-[#6A232A] transition duration-300 transform hover:scale-105 shadow-lg">Lanjutkan ke Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Sama seperti index.html agar konsisten) -->
+    <footer class="bg-primary-febsin text-white py-14 px-8">
+        <div class="container mx-auto text-center">
+            <p class="text-3xl font-extrabold tracking-wider mb-4">Febsin.</p>
+            <p class="mt-4 text-base text-white/70 font-light">Modernitas, Karakter, dan Karya Lokal. &copy; 2025</p>
+            
+            <div class="flex justify-center space-x-6 mt-8">
+                <a href="https://www.instagram.com/febsinstore?igsh=dTlhMDd2bjNzd2ly" target="_blank" rel="noopener noreferrer" 
+                   class="social-btn-footer">
+                    Instagram
+                </a>
+                
+                <a href="https://wa.me/message/NGFIMU4EBZQPI1" target="_blank" rel="noopener noreferrer" 
+                   class="social-btn-footer">
+                    WhatsApp
+                </a>
+                
+                <a href="https://www.tiktok.com/@ex.peby?_t=ZS-8xdsD6zrpZJ&_r=1" target="_blank" rel="noopener noreferrer" 
+                   class="social-btn-footer">
+                    TikTok
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript khusus halaman keranjang -->
+    <script type="module" src="js/cart.js"></script>
+</body>
+</html>
