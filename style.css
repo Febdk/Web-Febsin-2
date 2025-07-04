@@ -238,3 +238,12 @@ button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+/* Pastikan ini sudah diperbaiki di style.css Anda */
+.social-btn-footer:hover {
+    background-color: #B70000; /* Latar belakang merah gelap saat hover */
+    border-color: #B70000; /* Border merah gelap saat hover */
+    color: #FFFFFF; /* Teks tetap putih saat hover */
+    transform: translateY(-2px); /* Efek naik sedikit saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
+}

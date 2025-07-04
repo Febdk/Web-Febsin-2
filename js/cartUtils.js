@@ -1,19 +1,19 @@
 export const products = [
     {
         id: 'product1',
-        name: 'T-shirt Urban Groove', // Perbaikan: nama produk
-        price: 95000, // Perbaikan: pricce menjadi price
-        priceFormatted: 'Rp 95.000', // Perbaikan: format harga
-        category: 'streetwear', // Perbaikan: catagory menjadi category
+        name: 'T-shirt Urban Groove',
+        price: 95000, // PERBAIKAN KRITIS: price harus ANGKA
+        priceFormatted: 'Rp 95.000',
+        category: 'streetwear',
         description:  'T-shirt oversized dengan detail grafis edgy dan bahan katun organik yang nyaman. Desain terinspirasi dari seni jalanan lokal, cocok untuk gaya urban yang dinamis.',
         image: 'Image/T-Shirt Urban Groove.webp',
         sizes: 'S, M, L, XL',
-        material: '100% Katun Organik Bersertifikat', // Perbaikan: materal menjadi material
+        material: '100% Katun Organik Bersertifikat',
     },
     {
         id: 'product2',
         name: 'Kemeja Linen Tropis',
-        price: 125000,
+        price: 125000, // PERBAIKAN KRITIS: price harus ANGKA
         priceFormatted: 'Rp 125.000',
         category: 'kasual',
         description: 'Kemeja linen ringan dengan potongan modern dan kerah unik, ideal untuk iklim tropis. Desain minimalis dengan sentuhan warna bumi.',
@@ -24,7 +24,7 @@ export const products = [
     {
         id: 'product3',
         name: 'Blus Chic Asimetris',
-        price: 110000,
+        price: 110000, // PERBAIKAN KRITIS: price harus ANGKA
         priceFormatted: 'Rp 110.000',
         category: 'chic',
         description: 'Blus elegan dengan potongan asimetris dan detail kerutan halus. Terbuat dari Tencel yang jatuh sempurna, cocok untuk tampilan stylish nan sophisticated.',
@@ -35,7 +35,7 @@ export const products = [
     {
         id: 'product4',
         name: 'Outerwear Batik Kontemporer',
-        price: 170000,
+        price: 170000, // PERBAIKAN KRITIS: price harus ANGKA
         priceFormatted: 'Rp 170.000',
         category: 'chic',
         description: 'Outerwear dengan motif batik modern dan potongan tegas, memadukan tradisi dengan gaya formal kontemporer. Ideal untuk acara khusus.',
@@ -46,7 +46,7 @@ export const products = [
     {
          id: 'product5',
         name: 'Polo Shirt Minimalis',
-        price: 105000,
+        price: 105000, // PERBAIKAN KRITIS: price harus ANGKA
         priceFormatted: 'Rp 105.000',
         category: 'kasual',
         description: 'Polo shirt klasik dengan sentuhan minimalis dan detail jahitan rapi. Bahan pique yang nyaman, cocok untuk tampilan smart-casual sehari-hari.',
@@ -57,7 +57,7 @@ export const products = [
     {
         id: 'product6',
         name: 'Crop Top Edgy',
-        price: 75000,
+        price: 75000, // PERBAIKAN KRITIS: price harus ANGKA
         priceFormatted: 'Rp 75.000',
         category: 'streetwear',
         description: 'Crop top dengan desain potongan yang berani dan grafis abstrak. Bahan stretch yang mengikuti bentuk tubuh, sempurna untuk gaya streetwear yang ekspresif.',
@@ -68,7 +68,7 @@ export const products = [
     {
         id: 'product7',
         name: 'Kemeja Batik Moderen',
-        price: 250000,
+        price: 250000, // PERBAIKAN KRITIS: price harus ANGKA
         priceFormatted: 'Rp 250.000',
         category: 'formal',
         description: 'Kemeja batik khas indonesia dengan desain modern dan potongan slim fit. Cocok untuk acara formal maupun semi-formal.',
@@ -79,7 +79,7 @@ export const products = [
     {   
         id: 'product8',
         name: 'Javanes Hand Bag',
-        price: 190000,
+        price: 190000, // PERBAIKAN KRITIS: price harus ANGKA
         priceFormatted: 'Rp 190.000',
         category: 'formal',
         description: 'Tas tangan elegan dengan motif batik Javanese yang kaya. Terbuat dari bahan kulit sintetis berkualitas tinggi, cocok untuk acara formal.',
@@ -89,11 +89,8 @@ export const products = [
     }
 ];
 
-// Menggunakan 'const' untuk 'cart' dan memodifikasinya di tempatnya.
-// Ini memastikan referensi array tetap sama di semua modul yang mengimpornya.
-export const cart = []; // <<< PERBAIKAN KRITIS: Gunakan const dan array kosong
+export const cart = []; 
 
-// Fungsi untuk memformat harga menjadi Rupiah
 export function formatRupiah(number) {
     return new Intl.NumberFormat('id-ID', {
         style: 'currency',
@@ -102,25 +99,20 @@ export function formatRupiah(number) {
     }).format(number);
 }
 
-// Memuat keranjang dari Local Storage dan mengisi array 'cart' yang sudah ada
 export function loadCart() {
     const storedCart = localStorage.getItem('febsinCart');
     const loadedItems = storedCart ? JSON.parse(storedCart) : [];
-    // Kosongkan array 'cart' yang sudah ada dan isi dengan item yang dimuat
-    cart.length = 0; // Mengosongkan array tanpa mengubah referensi
-    loadedItems.forEach(item => cart.push(item)); // Menambahkan item yang dimuat
+    cart.length = 0; 
+    loadedItems.forEach(item => cart.push(item)); 
 }
 
-// Menyimpan keranjang ke Local Storage
 export function saveCart() {
     localStorage.setItem('febsinCart', JSON.stringify(cart));
-    updateCartCount(); // Perbarui tampilan jumlah item di keranjang
+    updateCartCount(); 
 }
 
-// Memperbarui jumlah item di ikon keranjang pada header
 export function updateCartCount() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    // Periksa apakah elemen ada sebelum memperbarui (karena tidak semua halaman punya semua elemen ini)
     const cartCountEl = document.getElementById('cart-count');
     if (cartCountEl) cartCountEl.textContent = totalItems;
     const cartCountMobileEl = document.getElementById('cart-count-mobile');
@@ -129,7 +121,6 @@ export function updateCartCount() {
     if (cartCountMobileNavEl) cartCountMobileNavEl.textContent = totalItems;
 }
 
-// Menambahkan produk ke keranjang
 export function addToCart(productId, quantity) {
     const product = products.find(p => p.id === productId);
     if (!product) {
@@ -145,36 +136,33 @@ export function addToCart(productId, quantity) {
         cart.push({
             productId: productId,
             name: product.name,
-            price: product.price,
+            price: product.price, 
             image: product.image,
             quantity: quantity
         });
     }
     saveCart();
-    alert(`"${product.name}" (${quantity}x) telah ditambahkan ke keranjang!`); // Ganti dengan modal notifikasi kustom
+    alert(`"${product.name}" (${quantity}x) telah ditambahkan ke keranjang!`);
 }
 
-// Menghapus item dari keranjang
 export function removeFromCart(productId) {
     const index = cart.findIndex(item => item.productId === productId);
     if (index > -1) {
-        cart.splice(index, 1); // Memodifikasi array di tempatnya
+        cart.splice(index, 1);
     }
     saveCart();
 }
 
-// Memperbarui kuantitas item di keranjang
 export function updateCartItemQuantity(productId, newQuantity) {
     const item = cart.find(item => item.productId === productId);
     if (item) {
         item.quantity = parseInt(newQuantity);
         if (item.quantity <= 0) {
-            removeFromCart(productId); // Hapus jika kuantitas 0 atau kurang
+            removeFromCart(productId);
         } else {
             saveCart();
         }
     }
 }
 
-// Panggil loadCart saat cartUtils.js dimuat pertama kali
-loadCart(); // <<< PERBAIKAN KRITIS: Panggil loadCart di sini untuk mengisi array 'cart'
+loadCart();
